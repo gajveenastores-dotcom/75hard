@@ -278,6 +278,14 @@
   .sync-dot.loading { background: var(--warning); animation: pulse 1s infinite; }
   .sync-dot.err { background: var(--danger); }
 
+  .visitor-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
   /* SIDEBAR */
@@ -630,7 +638,14 @@
     <div class="sync-dot" id="syncDot"></div>
     <span id="syncBarText">Loading data...</span>
   </div>
-  <span id="syncLastUpdated"></span>
+  <div style="display:flex;gap:16px;align-items:center">
+    <div class="visitor-count">
+      <span>👁️</span>
+      <span id="visitorCount">—</span>
+      <span>views</span>
+    </div>
+    <span id="syncLastUpdated"></span>
+  </div>
 </div>
 
 <!-- NAV TABS -->
@@ -863,6 +878,18 @@
 
   let allData = {};
 
+  async function incrementVisitorCount() {
+    try {
+      const res = await fetch('/api/visit', { method: 'POST' });
+      if (res.ok) {
+        const data = await res.json();
+        document.getElementById('visitorCount').textContent = data.count.toLocaleString();
+      }
+    } catch(e) {
+      console.log('Visitor count unavailable');
+    }
+  }
+
   async function loadData() {
     setSyncBar('loading', 'Loading data...');
     try {
@@ -1093,6 +1120,7 @@
   }
 
   loadData();
+  incrementVisitorCount();
 </script>
 </body>
 </html>
