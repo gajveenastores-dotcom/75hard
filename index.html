@@ -981,10 +981,15 @@
       document.getElementById('todayStatus').textContent = 'Not logged yet';
     }
 
-    // Eat out count
+    // Eat out count - only count days within the 75-day challenge
     let count = 0;
     Object.entries(allData).forEach(([k, v]) => {
-      if (!v.clean) count++;
+      // Skip non-date entries (like _visitorCount)
+      if (k.startsWith('_')) return;
+      const dayNum = getDayNumber(k);
+      if (dayNum >= 1 && dayNum <= 75 && !v.clean) {
+        count++;
+      }
     });
     document.getElementById('eatOutCount').textContent = count;
   }
