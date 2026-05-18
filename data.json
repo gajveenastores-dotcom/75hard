@@ -69,5 +69,15 @@
     "read": true,
     "sunscreen": true,
     "notes": "a busy sunday"
+  },
+  "2026-05-18": {
+    "steps": 13500,
+    "clean": true,
+    "sleep": 8,
+    "pushups": 8,
+    "water": 4,
+    "read": true,
+    "sunscreen": true,
+    "notes": ""
   }
 }
