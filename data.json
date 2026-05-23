@@ -109,5 +109,15 @@
     "read": true,
     "sunscreen": true,
     "notes": "missed a day"
+  },
+  "2026-05-23": {
+    "steps": 13046,
+    "clean": true,
+    "sleep": 6,
+    "pushups": 8,
+    "water": 4,
+    "read": true,
+    "sunscreen": true,
+    "notes": "Go to temples to increase step count"
   }
 }
