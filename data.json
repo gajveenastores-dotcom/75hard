@@ -129,5 +129,15 @@
     "read": true,
     "sunscreen": true,
     "notes": "Travel days are too hectic"
+  },
+  "2026-05-26": {
+    "steps": 13961,
+    "clean": true,
+    "sleep": 7,
+    "pushups": 12,
+    "water": 4,
+    "read": true,
+    "sunscreen": true,
+    "notes": ""
   }
 }
