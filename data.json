@@ -149,5 +149,15 @@
     "read": true,
     "sunscreen": true,
     "notes": "great finish to a hot day"
+  },
+  "2026-05-29": {
+    "steps": 13000,
+    "clean": true,
+    "sleep": 8.5,
+    "pushups": 13,
+    "water": 4,
+    "read": true,
+    "sunscreen": true,
+    "notes": ""
   }
 }
